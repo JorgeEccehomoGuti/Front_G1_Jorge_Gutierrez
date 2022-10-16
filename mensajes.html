@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript" src="js/funcionesMensajes.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="https://cdn.tailwindcss.com"></script> 
+    </head>
+    <body>
+        <nav class="bg-gradient-to-r from-gray-900 to-green-900">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+              <div class="flex h-16 items-center justify-between">
+                <div class="flex items-center">
+                  <div class="flex-shrink-0">
+                    <img class="h-8 w-8" src="https://cdn-icons-png.flaticon.com/512/1199/1199124.png" alt="Su  Compañia">
+                  </div>
+                  <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                      <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                      <a href="index.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Inicio</a>
+        
+                      <a href="gama.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Gamas</a>
+        
+                      <a href="Car.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Carros</a>
+        
+                      <a href="clientes.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Clientes</a>
+        
+                      <a href="reservaciones.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Reservaciones</a>
+                      <a href="reportes.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Reportes</a>
+                    </div>
+                  </div>
+                </div>
+                
+                    <div class="relative ml-3">
+                      <div>
+                        <a class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">FRONT FINAL G1 JORGE GUTIERREZ</a> 
+                        <button type="button" class="flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 ring-blue-500 ring-2 ring-blue-500" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                          <span class="sr-only">Open user menu</span>
+                          <img class="h-8 w-8 rounded-full" src="https://cdn-icons-png.flaticon.com/512/5013/5013652.png" alt="">
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="-mr-2 flex md:hidden"> 
+          </nav>
+          
+          <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl ">
+            <span class="block text-lime-600 xl:inline self-center md:self-end">Mensajes</span>
+          </h1>
+          <div id="resultado1"></div>  
+          <div class="p-2 w-full">
+            <button onclick="postMensajes()" class="flex mx-auto text-white bg-lime-500 border-0 py-2 px-8 focus:outline-none hover:bg-red-600 rounded text-lg">Crear Automóvil</button>
+          </div>
+           
+
+
+          <section class="text-gray-400 bg-gray-900 body-font relative">
+            <div class="container px-5 py-24 mx-auto">
+              <div class="flex flex-col text-center w-full mb-12">
+                <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-white">Crea Tu Mensaje</h1>
+                <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Puedes Crear y Ver tus Mensajes</p>
+              </div>
+              <div class="lg:w-1/2 md:w-2/3 mx-auto">
+                <div class="flex flex-wrap -m-2">
+                  <div class="p-2 w-1/2">
+                    <div class="relative">
+                      <label for="name" class="leading-7 text-sm text-gray-400">Mensaje</label>
+                      <input type="text" id="messageText" name="name" class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-green-500 focus:bg-gray-900 focus:ring-2 focus:ring-green-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                    </div>
+                  </div>
+                  <div class="p-2 w-1/2">
+                    <div class="relative">
+                      <label for="Categoria" class="leading-7 text-sm text-gray-400">Seleccione Cliente</label>
+                      <select type="text" id="select-client" name="Categotia" class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-green-500 focus:bg-gray-900 focus:ring-2 focus:ring-green-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                    </div>
+                  </div>
+                  
+                  
+                  
+                </div>
+              </div>
+            </div>
+          </section>  
+
+        <script type="text/javascript">
+            window.onload = getMensajes_Car();
+        </script>
+
+        <script type="text/javascript">
+            window.onload = getMensajes_Client();
+        </script>
+
+
+        <div>
+           
+
+            <select id="select-client"></select>
+         
+        </div>
+        
+        <!--<button onclick="postMensajes()">Crear Mensaje</button>-->
+
+        <script type="text/javascript">
+            window.onload = getMensajes();
+        </script>
+<section><div class="p-2 w-1/2">
+    <div class="relative">
+      <label for="Categoria" class="leading-7 text-sm text-gray-400">Seleccione Auto</label>
+      <select type="text" id="select-car" name="Categotia" class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-green-500 focus:bg-gray-900 focus:ring-2 focus:ring-green-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+    </div>
+  </div></section>
+        
+        
+    </body>
+</html>
